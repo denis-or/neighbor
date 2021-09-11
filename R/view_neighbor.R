@@ -1,6 +1,6 @@
-#' View the connections of the neighborhood
+#' View the neighborhood
 #'
-#' `{view_connections()}` get neighbors from an neighbor object and returns a ggplot object.
+#' `{view_neighbor()}` get neighbors from an neighbor object and returns a ggplot object.
 #'
 #'
 #'
@@ -11,14 +11,12 @@
 #' @examples \dontrun{
 #' l_nb <- get_neighbor(sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf")), "Queen")
 #'
-#' view_connections(l_nb)
+#' view_neighbor(l_nb)
 #' }
 #' @export
 
 
-
-
-view_connections <- function(nbr) {
+view_neighbor <- function(nbr) {
 
   if (class(nbr) != "vizi") {
     stop('Erro: Objeto não foi criado anteriormente.
@@ -32,8 +30,8 @@ view_connections <- function(nbr) {
       size = 0.2,
       color = "#bababa"
     ) +
-    ggplot2::geom_sf(data = nbr$centroide, size = 1.5) +
     ggplot2::geom_sf(data = nbr$vizinho, size = 0.2) +
+    ggplot2::geom_sf_label(data = nbr$centroide, ggplot2::aes(label = id_vizi)) +
     ggplot2::theme_bw() +
     ggplot2::theme(axis.text.y = ggplot2::element_text(angle = 90)) +
     ggplot2::labs(x = "Lat", y = "Lon")
