@@ -8,15 +8,20 @@ Authors@R:
            email = "catoper@gmail.com",
            comment = c(ORCID = "0000-0003-3748-876X",
            Lattes = "7838408308841051"))
-Description: "`neighbor` gets and visualizes the neighbors of a spatial object 
-    (area) that has at least one point (or vertex) in common, but no intersection. 
+Description: `neighbor` gets and visualizes the neighbors of a spatial object 
+    (area objects) that has at least one point (or vertex) in common, but no intersection. 
     This package uses the `poly2nb` function from the `spdep` package with the
-    contiguity neighborhood type: queen and rook."
+    contiguity neighborhood type: queen and rook.
 License: MIT + file LICENSE
 URL: https://github.com/denis-or/neighbor
-BugsReports: https://github.com/denis-or/neighbor/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 BugReports: https://github.com/denis-or/neighbor/issues
+Imports: 
+    dplyr,
+    ggplot2,
+    magrittr,
+    sf,
+    spdep
