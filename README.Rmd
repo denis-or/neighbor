@@ -1,5 +1,17 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # neighbor <a href='https://www.denis-or.com.br'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
@@ -8,25 +20,31 @@
 
 ## Overview
 
-`{neighbor}` gets and visualizes the neighbors of a spatial object (area
-objects) that has at least one point (or vertex) in common, but no
-intersection. This package uses the `poly2nb` function from the `spdep`
-package with the contiguity neighborhood type: queen and rook.
+`{neighbor}` gets and visualizes the neighbors of a spatial object (area objects) 
+that has at least one point (or vertex) in common, but no intersection. 
+This package uses the `poly2nb` function from the `spdep` package with the
+contiguity neighborhood type: queen and rook.
 
 ## Installation
 
 And the development version from [GitHub](https://github.com/) with:
 
-``` r
+```{r}
 # install.packages("remotes")
 remotes::install_github("denis-or/neighbor")
-
 ```
 
 ## Example
+
+
+```{r}
+
+```
+
 
 ## License
 
 `{neighbor}` is licensed under the MIT license. Check out
 [LICENSE.md](https://github.com/denis-or/neighbor/blob/master/LICENSE.md)
 for the full text.
+
