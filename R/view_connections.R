@@ -9,9 +9,17 @@
 #' @return An object `ggplot`
 #'
 #' @examples \dontrun{
-#' l_nb <- get_neighbor(sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf")), "Queen")
+#' # Import
+#' nc <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf"))
 #'
+#' # Get the neighbor
+#' l_nb <- get_neighbor(nc, "Queen")
+#'
+#' # Visualize
 #' view_connections(l_nb)
+#'
+#' view_neighbor(l_nb)
+#'
 #' }
 #' @export
 
@@ -20,9 +28,9 @@
 
 view_connections <- function(nbr) {
 
-  if (class(nbr) != "vizi") {
-    stop('Erro: Objeto não foi criado anteriormente.
-         Use a função `get_neighbor`.', call. = F)
+  if (class(nbr)[1] != "vizi") {
+    stop('Erro: Objeto n\u00e3o foi criado anteriormente.
+         Use a fun\u00e7\u00e3o `get_neighbor`.', call. = F)
   }
 
   .gg1 <- ggplot2::ggplot() +

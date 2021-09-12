@@ -24,5 +24,6 @@ Imports:
     ggplot2,
     magrittr,
     patchwork,
+    rlang,
     sf,
     spdep

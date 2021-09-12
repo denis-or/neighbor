@@ -10,15 +10,26 @@
 #' @return An object `vizi`
 #'
 #' @examples \dontrun{
-#' l_nb <- get_neighbor(sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf")), "Queen")
+#' # Import
+#' nc <- sf::read_sf(system.file("gpkg/nc.gpkg", package = "sf"))
+#'
+#' # Get the neighbor
+#' l_nb <- get_neighbor(nc, "Queen")
+#'
+#' # Visualize
+#' view_connections(l_nb)
+#'
+#' view_neighbor(l_nb)
+#'
 #' }
+#' @importFrom rlang .data
 #' @export
 
 
 get_neighbor <- function(shapefile, tipo = "Queen") {
 
   if (missing(shapefile) || !exists(deparse(substitute(shapefile)))) {
-    stop("Geometria não existe", call. = F)
+    stop("Geometria n\u00e3o existe", call. = F)
   }
 
   if (class(sf::st_geometry(shapefile))[1] != "sfc_MULTIPOLYGON") {
@@ -26,23 +37,24 @@ get_neighbor <- function(shapefile, tipo = "Queen") {
     shapefile <- try(sf::st_cast(shapefile, "MULTIPOLYGON"), silent = TRUE)
 
     if (inherits(shapefile, "try-error")) {
-      stop("Uma geometria de polígonos é requerida", call. = F)
+      stop("Uma geometria de pol\u00edgonos \u00e9 requerida", call. = F)
     }
   }
 
   if (length(shapefile$geom) <= 1) {
-    stop("A geometria não pode ser usada para vizinhança", call. = F)
+    stop("A geometria n\u00e3o pode ser usada para vizinhan\u00e7a", call. = F)
   }
 
   if (tipo != "Queen" & tipo != "Rook" ) {
-    stop("Tipo de vizinhança desconhecido. Tente `Queen` ou `Rook`.", call. = F)
+    stop("Tipo de vizinhan\u00e7a desconhecido. Tente `Queen` ou `Rook`.", call. = F)
   }
 
   .crs <- sf::st_crs(shapefile)
   .shape_sp <- sf::as_Spatial(shapefile)
   .centroide <- sf::st_centroid(shapefile)
-  .centroide$id_vizi <- rownames(.centroide)
-  .centroide <- .centroide[,c('id_vizi', 'geom')]
+  .centroide <- .centroide %>%
+    dplyr::mutate(id_vizi = rownames(.centroide)) %>%
+    dplyr::select(.data$id_vizi, .data$geom)
 
 
   .coordenadas <- sf::st_coordinates(.centroide)
