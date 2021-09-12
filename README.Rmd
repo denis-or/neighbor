@@ -18,12 +18,11 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-## Overview
 
-`{neighbor}` gets and visualizes the neighbors of a spatial object (area objects) 
-that has at least one point (or vertex) in common, but no intersection. 
-This package uses the `poly2nb` function from the `spdep` package with the
-contiguity neighborhood type: queen and rook.
+`{neighbor}` gets and visualizes the neighbors of a spatial object (area 
+objects) that has at least one point (or vertex) in common, but no
+intersection. This package uses the `poly2nb` function from the `spdep` 
+package with the contiguity neighborhood type: queen and rook.
 
 ## Installation
 
@@ -32,6 +31,7 @@ And the development version from [GitHub](https://github.com/) with:
 ```{r}
 # install.packages("remotes")
 remotes::install_github("denis-or/neighbor")
+
 ```
 
 ## Example
