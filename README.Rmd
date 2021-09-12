@@ -74,6 +74,7 @@ neighbor::view_neighbor(nb) +
 ```
 
 
+
 ## License
 
 `{neighbor}` is licensed under the MIT license. Check out

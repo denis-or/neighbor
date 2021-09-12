@@ -53,7 +53,7 @@ package to the function.
 neighbor::view_connections(nb) +
   ggplot2::ggtitle("Neighborhood of the municipalities of Roraima.")
 ```
-<img src="man/figures/connections_rr.png" width="90%" style="display: block; margin: auto;" />
+<img src="man/figures/connections_rr.png" style="display: block; margin: auto;" />
 
 
 We will also look at the neighboring municipalities named on the map.
@@ -62,7 +62,8 @@ We will also look at the neighboring municipalities named on the map.
 neighbor::view_neighbor(nb) +
   ggplot2::ggtitle("Neighboring municipalities of Roraima.")
 ```
-<img src="man/figures/neighbor_rr.png" width="90%" style="display: block; margin: auto;" />
+<img src="man/figures/neighbor_rr.png" style="display: block; margin: auto;" />
+
 
 ## License
 
