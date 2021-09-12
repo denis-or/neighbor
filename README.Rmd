@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# neighbor <a href='https://www.denis-or.com.br'><img src='man/figures/logo.png' align="right" height="139" /></a>
+# neighbor <a href='https://www.denis-or.com.br'><img src='man/figures/README-logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -73,7 +73,9 @@ neighbor::view_neighbor(nb) +
   ggplot2::ggtitle("Neighboring municipalities of Roraima.")
 ```
 
+## Author
 
+Denis de Oliveira Rodrigues - catoper@gmail.com
 
 ## License
 
