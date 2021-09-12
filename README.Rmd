@@ -66,7 +66,6 @@ neighbor::view_connections(nb) +
 ```
 
 
-
 We will also look at the neighboring municipalities named on the map.
 
 ```{r, fig.align = 'center', fig.width= 12, fig.height= 7}
