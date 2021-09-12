@@ -28,14 +28,12 @@ remotes::install_github("denis-or/neighbor")
 In this example, we are going to use the `geobr` package to get spatial data for 
 Roraima, northern Brazil.
 
-In this example, we are going to use the `geobr` package to get spatial data for 
-Roraima, northern Brazil.
-
 ```{r}
 library(neighbor)
 library(geobr)
 ```
 
+<img src="man/figures/connections_rr.png" width="70%" style="display: block; margin: auto;" />
 
 ```{r}
 rr <- geobr::read_municipality("RR")
@@ -45,7 +43,7 @@ rr <- geobr::read_municipality("RR")
 Now we get the neighbors with the `get_neighbor` function:
 
 ```{r}
-nb <- neighbor::get_neighbor(rr)
+nb <- neighbor::get_neighbor(shapefile = rr, tipo = "Queen")
 ```
 
 In the next step, we will visualize the map with the connections between the 

@@ -53,7 +53,7 @@ rr <- geobr::read_municipality("RR")
 Now we get the neighbors with the `get_neighbor` function:
 
 ```{r}
-nb <- neighbor::get_neighbor(rr)
+nb <- neighbor::get_neighbor(shapefile = rr, tipo = "Queen")
 ```
 
 In the next step, we will visualize the map with the connections between the 
@@ -64,6 +64,8 @@ package to the function.
 neighbor::view_connections(nb) +
   ggplot2::ggtitle("Neighborhood of the municipalities of Roraima.")
 ```
+
+
 
 We will also look at the neighboring municipalities named on the map.
 
