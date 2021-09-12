@@ -25,6 +25,48 @@ remotes::install_github("denis-or/neighbor")
 
 ## Example
 
+In this example, we are going to use the `geobr` package to get spatial data for 
+Roraima, northern Brazil.
+
+In this example, we are going to use the `geobr` package to get spatial data for 
+Roraima, northern Brazil.
+
+```{r}
+library(neighbor)
+library(geobr)
+```
+
+
+```{r}
+rr <- geobr::read_municipality("RR")
+```
+
+
+Now we get the neighbors with the `get_neighbor` function:
+
+```{r}
+nb <- neighbor::get_neighbor(rr)
+```
+
+In the next step, we will visualize the map with the connections between the 
+municipalities. Note that we have added the ggtitle element from the `ggplot`
+package to the function.
+
+```{r, fig.align = 'center', fig.width= 12, fig.height= 7}
+neighbor::view_connections(nb) +
+  ggplot2::ggtitle("Neighborhood of the municipalities of Roraima.")
+```
+
+We will also look at the neighboring municipalities named on the map.
+
+```{r, fig.align = 'center', fig.width= 12, fig.height= 7}
+neighbor::view_neighbor(nb) +
+  ggplot2::ggtitle("Neighboring municipalities of Roraima.")
+```
+
+
+
+
 ## License
 
 `{neighbor}` is licensed under the MIT license. Check out
